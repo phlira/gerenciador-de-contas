@@ -8,9 +8,9 @@ import javax.persistence.Query;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.gerenciador.modelo.Conta;
-import br.com.gerenciador.modelo.Movimentacao;
-import br.com.gerenciador.modelo.TipoMovimentacao;
+import br.com.gerenciador.modelo.imp.Conta;
+import br.com.gerenciador.modelo.imp.Movimentacao;
+import br.com.gerenciador.modelo.imp.TipoMovimentacao;
 import br.com.gerenciador.util.JPAUtil;
 
 public class ConsultaTest {
@@ -19,7 +19,7 @@ public class ConsultaTest {
 	
 	@Before
 	public void criaEntityManager() {
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
 	}
 	
 	@Test

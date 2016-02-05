@@ -89,6 +89,13 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+
+
 		<!-- jersey -->
 
 		<dependency>

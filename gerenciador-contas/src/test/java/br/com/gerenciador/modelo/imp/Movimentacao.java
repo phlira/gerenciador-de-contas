@@ -1,4 +1,4 @@
-package br.com.gerenciador.modelo;
+package br.com.gerenciador.modelo.imp;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
@@ -89,7 +89,4 @@ public class Movimentacao {
 	public void setConta(Conta conta) {
 		this.conta = conta;
 	}
-	
-	
-
 }

@@ -1,4 +1,4 @@
-package br.com.gerenciador.modelo;
+package br.com.gerenciador.modelo.imp;
 
 public enum TipoMovimentacao {
 

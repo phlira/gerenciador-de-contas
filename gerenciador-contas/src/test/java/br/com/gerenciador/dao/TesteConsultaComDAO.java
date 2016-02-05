@@ -5,7 +5,9 @@ import javax.persistence.EntityManager;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.gerenciador.modelo.Conta;
+import br.com.gerenciador.dao.imp.MovimentacaoDAO;
+import br.com.gerenciador.modelo.PopulaBancoParaOsTestes;
+import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.util.JPAUtil;
 
 public class TesteConsultaComDAO {
@@ -15,8 +17,11 @@ public class TesteConsultaComDAO {
 	
 	@Before
 	public void criaEntityManager() {
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
+		em.getTransaction().begin();
 		mDAO = new MovimentacaoDAO(em);
+		PopulaBancoParaOsTestes p = new PopulaBancoParaOsTestes(em);
+		p.PopulaBanco();
 	}
 	
 	@Test

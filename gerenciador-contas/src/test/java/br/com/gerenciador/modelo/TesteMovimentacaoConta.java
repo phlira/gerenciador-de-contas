@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.gerenciador.modelo.imp.Movimentacao;
 import br.com.gerenciador.util.JPAUtil;
 
 public class TesteMovimentacaoConta {
@@ -13,7 +14,7 @@ public class TesteMovimentacaoConta {
 	
 	@Before
 	public void criaEntityManager() {
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
 	}
 	
 	@Test

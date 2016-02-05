@@ -1,9 +1,9 @@
-package br.com.gerenciador.dao;
+package br.com.gerenciador.dao.imp;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import br.com.gerenciador.modelo.Conta;
+import br.com.gerenciador.modelo.imp.Conta;
 
 public class MovimentacaoDAO {
 

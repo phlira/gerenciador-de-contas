@@ -9,7 +9,8 @@ import javax.persistence.TypedQuery;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.gerenciador.modelo.Conta;
+import br.com.gerenciador.modelo.PopulaBancoParaOsTestes;
+import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.util.JPAUtil;
 
 public class TesteConsultaFuncoes {
@@ -18,7 +19,10 @@ public class TesteConsultaFuncoes {
 	
 	@Before
 	public void criaEntityManager() {
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
+		em.getTransaction().begin();
+		PopulaBancoParaOsTestes p = new PopulaBancoParaOsTestes(em);
+		p.PopulaBanco();
 	}
 	
 	@Test

@@ -5,9 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.util.JPAUtil;
 
 public class TesteContaMovimentacoes {
@@ -16,13 +18,21 @@ public class TesteContaMovimentacoes {
 	
 	@Before
 	public void criaEntityManager() {
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
+		em.getTransaction().begin();
+	}
+	
+	@After
+	public void fechaTransacao(){
+		em.close();
 	}
 	
 	@Test
 	public void testRelacionamentoOneToMany() {
-		Conta conta = em.find(Conta.class, 1);
-		System.out.println(conta.getMovimentacoes().size());
+		PopulaBancoParaOsTestes p = new PopulaBancoParaOsTestes(em);
+		p.PopulaBanco();
+		Conta contaRetorno = em.find(Conta.class, 1);
+		System.out.println(contaRetorno.getTitular());
 	}
 
 	@Test

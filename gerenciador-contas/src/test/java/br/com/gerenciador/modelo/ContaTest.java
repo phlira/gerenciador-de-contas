@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.util.JPAUtil;
 
 public class ContaTest {
@@ -13,7 +14,7 @@ public class ContaTest {
 	
 	@Before
 	public void criaConexaoComOBanco() {
-        em = new JPAUtil().getEntityManager();
+        em = new JPAUtil().getEntityManagerTest();
 	}
 
 	@Test
