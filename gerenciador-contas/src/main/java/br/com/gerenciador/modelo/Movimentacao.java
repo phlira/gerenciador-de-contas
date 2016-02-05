@@ -13,6 +13,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
+@NamedQueries({
+	@NamedQuery(name="mediaDaContaPeloTipoMovimentacao", query="select avg(m.valor) from Movimentacao m where m.conta=:pConta and m.tipoMovimentacao = :pTipo"),
+	@NamedQuery(name="totalDeMovimentacoes", query="select count(m) from Movimentacao m where m.conta = :pConta")
+	
+})
+
+
 @Entity
 public class Movimentacao {
 	

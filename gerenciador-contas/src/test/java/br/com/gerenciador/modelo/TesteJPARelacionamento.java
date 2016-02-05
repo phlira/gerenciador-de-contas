@@ -24,11 +24,11 @@ public class TesteJPARelacionamento {
 
         Movimentacao movimentacao = new Movimentacao();
         movimentacao.setData(Calendar.getInstance());
-        movimentacao.setDescricao("Fraldas");
+        movimentacao.setDescricao("Conta de Luz");
         movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
-        movimentacao.setValor(new BigDecimal("50.9"));
+        movimentacao.setValor(new BigDecimal("150.9"));
         
-        Conta conta = manager.find(Conta.class, 202);
+        Conta conta = manager.find(Conta.class, 1);
         
         movimentacao.setConta(conta);
 

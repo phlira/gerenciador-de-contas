@@ -1,9 +1,12 @@
 package br.com.gerenciador.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -17,6 +20,13 @@ public class Conta {
     private String banco;
     private String agencia;
     private String numero;
+    
+    @OneToMany(mappedBy="conta")
+    private List<Movimentacao> movimentacoes;
+    
+    public List<Movimentacao> getMovimentacoes() {
+		return movimentacoes;
+	}
 
     public Integer getId() {
         return id;
