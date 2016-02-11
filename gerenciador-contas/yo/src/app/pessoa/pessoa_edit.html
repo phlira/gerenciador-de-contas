@@ -1,0 +1,58 @@
+<div class="page-header text-center">
+    <h1>{{pessoa.firstName}} {{pessoa.lastName}}</h1>
+</div>
+
+<p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+
+<form name="formulario" class="row" ng-submit="submeter()">
+    <div class="col-md-6" style="margin-left:100px">
+        <div class="form-group">
+            <label>Primeiro Nome</label>
+            <input name="firtName" class="form-control" ng-model="pessoa.firstName" required ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.firstName.$error.required">
+            	Primeiro Nome Obrigatorio
+            </span>
+            <span ng-show="formulario.$submitted && formulario.firstName.$error.maxlengthh">
+            	Quantidade de caracteres ultrapassa o limite.
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Ultimo Nome</label>
+            <input name="lastName" class="form-control" ng-model="pessoa.lastName" required ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.lastName.$error.required">
+                Ultino Nome Obrigatorio
+            </span>
+            <span ng-show="formulario.$submitted && formulario.lastName.$error.maxlengthh">
+                Quantidade de caracteres ultrapassa o limite.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>User</label>
+            <input name="user" class="form-control" ng-model="pessoa.user" required ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.user.$error.required">
+                Ultino Nome Obrigatorio
+            </span>
+            <span ng-show="formulario.$submitted && formulario.user.$error.maxlengthh">
+                Quantidade de caracteres ultrapassa o limite.
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input name="pass" type="password" class="form-control" ng-model="pessoa.pass" required ng-maxlength="50">
+            <span ng-show="formulario.$submitted && formulario.pass.$error.required">
+                Ultino Nome Obrigatorio
+            </span>
+            <span ng-show="formulario.$submitted && formulario.pass.$error.maxlengthh">
+                Quantidade de caracteres ultrapassa o limite.
+            </span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        <a href="/#/pessoa" class="btn btn-primary">Voltar</a>
+        <hr>
+    </div>
+</form>

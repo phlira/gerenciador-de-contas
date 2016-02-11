@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('yo')
+    .module('gcontas')
     .directive('acmeMalarkey', acmeMalarkey);
 
   /** @ngInject */

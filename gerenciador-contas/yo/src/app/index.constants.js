@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('yo')
+    .module('gcontas')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

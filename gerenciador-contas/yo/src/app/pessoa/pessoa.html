@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="no-more-tables">
+			<ul ng-show="pessoas.length > 0" class="list-group">
+				<li ng-repeat="pessoa in pessoas" class="list-group-item">
+					<a href="/#/pessoa/edit/{{pessoa.id}}">{{pessoa.firstName}} {{pessoa.lastName}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
