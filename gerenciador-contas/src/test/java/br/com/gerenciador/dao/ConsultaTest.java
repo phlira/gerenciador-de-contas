@@ -29,6 +29,7 @@ public class ConsultaTest {
 		
 		Query query = em.createQuery("select m from Movimentacao m where m.conta.id=" + conta.getId());
 		
+		@SuppressWarnings("unchecked")
 		List<Movimentacao> movimentacoes = query.getResultList();
 		
 		for (Movimentacao m : movimentacoes) {
@@ -51,6 +52,7 @@ public class ConsultaTest {
 		query.setParameter(1, conta);
 		query.setParameter(2, TipoMovimentacao.SAIDA);
 		
+		@SuppressWarnings("unchecked")
 		List<Movimentacao> movimentacoes = query.getResultList();
 		
 		for (Movimentacao m : movimentacoes) {
@@ -74,6 +76,7 @@ public class ConsultaTest {
 		query.setParameter("pConta", conta);
 		query.setParameter("pTipo", TipoMovimentacao.SAIDA);
 		
+		@SuppressWarnings("unchecked")
 		List<Movimentacao> movimentacoes = query.getResultList();
 		
 		for (Movimentacao m : movimentacoes) {

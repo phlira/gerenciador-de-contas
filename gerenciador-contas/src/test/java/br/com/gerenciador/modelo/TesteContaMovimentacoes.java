@@ -39,6 +39,8 @@ public class TesteContaMovimentacoes {
 	public void testRelacionamentoOneToManyBidirecional() {
 		Query query = em.createQuery("select c from Conta c join fetch c.movimentacoes where c.id= :pId");
 		query.setParameter("pId", 1);
+		
+		@SuppressWarnings("unchecked")
 		List<Conta> contas = query.getResultList();
 		for (Conta conta : contas) {
 			System.out.println(conta.getMovimentacoes().size());
