@@ -7,11 +7,6 @@
 
   function routeConfig($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
       .when('/pessoa',{
         templateUrl: 'app/pessoa/pessoa.html',
         controller: 'PessoaController'
@@ -21,7 +16,7 @@
         controller: 'PessoaController'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/pessoa'
       });
   }
 
