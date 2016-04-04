@@ -5,9 +5,9 @@ import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
+import br.com.gerenciador.model.TipoMovimentacao;
 import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.modelo.imp.Movimentacao;
-import br.com.gerenciador.modelo.imp.TipoMovimentacao;
 
 public class PopulaBancoParaOsTestes {
 

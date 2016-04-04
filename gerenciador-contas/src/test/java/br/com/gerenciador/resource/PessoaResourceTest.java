@@ -17,7 +17,7 @@ public class PessoaResourceTest {
 	
 	@Before
 	public void init(){
-		em = new JPAUtil().getEntityManager();
+		em = new JPAUtil().getEntityManagerTest();
 		em.getTransaction().begin();
 	}
 	
@@ -31,7 +31,7 @@ public class PessoaResourceTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void CarregaPessoaTest() {
-		Pessoa pessoa = em.find(Pessoa.class, 1l);
+		Pessoa pessoa = em.find(Pessoa.class, 1);
 		assertEquals(pessoa.getFirstName(), "Pedro");
 	}
 

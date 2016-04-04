@@ -8,9 +8,9 @@ import javax.persistence.EntityManager;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.gerenciador.model.TipoMovimentacao;
 import br.com.gerenciador.modelo.imp.Conta;
 import br.com.gerenciador.modelo.imp.Movimentacao;
-import br.com.gerenciador.modelo.imp.TipoMovimentacao;
 import br.com.gerenciador.util.JPAUtil;
 
 public class TesteJPARelacionamento {
